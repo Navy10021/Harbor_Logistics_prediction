@@ -3,8 +3,6 @@
 
 ## Neural Network(Transformers)-based Port Logistics Prediction model 
 
-Comming Soon...
-
 ### 1. Project Introductions
 
 Comming Soon...
