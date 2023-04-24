@@ -12,7 +12,7 @@ df = pd.read_csv("./data/meta_data(cargo).csv", index_col = "date")
 target = "Busan"
 
 
-# 3. Features selection based on Pearson Correlation Coefficient(PCC) : PCC > +0.55 and PCC < -0.55
+# 3. Features selection based with Pearson Correlation Coefficient(PCC) : PCC > +0.55 and PCC < -0.55
 plt.figure(figsize=(10, 8))
 sns.heatmap(df.corr(), cmap = "Blues")
 plt.title("Feature Importance (Correlations Between Variables)", size = 16)
@@ -23,7 +23,7 @@ new_df = df[num_cols]
 print("\n >> Important features based on PCC :", list(new_df.columns))
 
 
-# 4. Feature selection based on Ensemble model(XGBoost)
+# 4. Feature selection with Ensemble model (XGBoost)
 train = df.loc[df.index < '2020-01-01']
 test = df.loc[df.index >= '2020-01-01']
 features = list(df.columns)
@@ -51,3 +51,6 @@ fi.sort_values('importance').plot(kind = 'barh')
 plt.title("Feature Importance (Ensemble Model)", size = 16)
 plt.legend(loc = 'center right')
 plt.show()
+
+
+print("Feature selection is Done.")
