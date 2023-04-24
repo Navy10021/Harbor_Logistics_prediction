@@ -13,7 +13,6 @@ plot_template = dict(
         "xaxis_title_font_size": 15,
         "yaxis_title_font_size": 15})
 )
-
 from statsmodels.tsa.deterministic import CalendarFourier, DeterministicProcess
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
@@ -31,8 +30,9 @@ fig.update_layout(template = plot_template,
 fig.show()
 
 
-# 3. Trend
-print("\n >> Analyze trend data...")
+# 3. Trend analysis
+print("\n >> Analyze Harbor logistics Trend...")
+
 # Plot Graph format
 plt.rc("figure", autolayout=True, 
        figsize=(15, 6), titlesize = 18, titleweight = 'bold')
@@ -82,8 +82,9 @@ _ = ax.legend()
 plt.show()
 
 
-# 4. Seasonality
-print("\n >> Analyze Seasonality data...")
+# 4. Seasonality analysis
+print("\n >> Analyze Harbor logistics Seasonality...")
+
 # date index to datetime
 df.index = pd.to_datetime(df.index, utc = False)
 
@@ -112,8 +113,9 @@ ax.set_title('Seasonality of Port Traffic Volumn by Month')
 plt.show()
 
 
-# 5. Time Series
-print("\n >> Time Series Seasonality data...")
+# 5. Time Series analysis
+print("\n >> Analyze Harbor logistics Time Series...")
+
 # Build lag data function : Lag 1 = Delay One-Year
 def make_lag(df):
     df['Lag_1'] = df[target].shift(1)
@@ -189,7 +191,6 @@ def lagplot(x, y=None, lag=1, standardize=False, ax=None, **kwargs):
     ax.set(title=f"Lag {lag}", xlabel=x_.name, ylabel=y_.name)
     return ax
 
-
 def plot_lags(x, y=None, lags=6, nrows=1, lagplot_kwargs={}, **kwargs):
     import math
     kwargs.setdefault('nrows', nrows)
@@ -244,4 +245,5 @@ rmsle_valid = metrics.mean_squared_log_error(y_val, y_fore) ** 0.5
 print(" >> RMSE Score : {:.4f}".format(rmse_valid))
 print(" >> RMSLE Score : {:.4f}".format(rmsle_valid))
 
-print("\n Data analysis is done.")
+
+print("\n Harbor Logistics Data Analysis is done.")
