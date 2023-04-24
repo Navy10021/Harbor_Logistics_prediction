@@ -28,6 +28,6 @@ train_eval(
     criterion = criterion,
     optimizer = optimizer,
     scheduler = scheduler,
-    epochs = 8000,             # Best epochs : 5000 ~
+    epochs = 8000,              # Best epochs : 5000 ~
     prediction_steps = 6,       # Predict month : 6 Months
     )
