@@ -137,4 +137,6 @@ print("==============================")
 # 6. Save the meta dataset 
 cargo_df.to_csv("./data/meta_data(cargo).csv")
 ferry_df.to_csv("./data/meta_data(ferry).csv")
-print(">> Complete saving Metadata")
+
+
+print(">> Data preprocessing and saving meta-dataset are Done.")
