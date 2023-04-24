@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=%20ROK%20Port%20Logistics%20Forecast&fontSize=60)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=300&section=header&text=%20ROK%20Port%20Logistics%20Forecast&fontColor=317589&fontSize=60)
 
 
 ## Neural Network(Transformers)-based Port Logistics Prediction model 
