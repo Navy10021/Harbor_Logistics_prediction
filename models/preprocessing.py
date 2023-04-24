@@ -139,4 +139,4 @@ cargo_df.to_csv("./data/meta_data(cargo).csv")
 ferry_df.to_csv("./data/meta_data(ferry).csv")
 
 
-print(">> Data preprocessing and saving meta-dataset are Done.")
+print("/n >> Data preprocessing and saving meta-dataset are Done.")
