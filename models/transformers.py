@@ -1,1 +1,1 @@
-# Transformer based model
+# Transformer-based prediction model
