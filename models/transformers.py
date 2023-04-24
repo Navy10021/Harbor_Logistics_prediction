@@ -256,8 +256,8 @@ def predict_future(eval_model, data_source, steps):
     data = data.cpu().view(-1)
 
     pyplot.figure(figsize = (10, 6))
-    pyplot.plot(data, color = "#e35f62", linestyle = '-', marker='*', markersize = 5, label = 'Forcast')
-    pyplot.plot(data[:input_window],color = "C0", label = 'Input data')          
+    pyplot.plot(data, color = "#e35f62", linestyle = '--', marker='*', markersize = 6, label = 'Forcast') 
+    pyplot.plot(data[:input_window],color = "C0", marker='*', markersize = 6, label = 'Input data')         
     pyplot.grid(True, which = 'both')
     pyplot.axhline(y=0, color = 'k')
     pyplot.legend(loc = 'upper right')
