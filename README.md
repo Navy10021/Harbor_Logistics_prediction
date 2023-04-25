@@ -21,7 +21,7 @@ To summarize the entire process of the **『Transformers-based Port Logistics Pr
 
 ### 2. Model Description
 
-Transformers-based model architecture
+***Transformers-based model architecture***
 
 + IMG
 
@@ -35,7 +35,7 @@ $ python models/preprocessing.py
 ```
 
 #### STEP 2. Time series Data Analysis and Visualization
-In this step, the meta data converted to time series data is automatically analyzed with our **time series data analysis tool**. Executing the Python code below shows the results of time series data analyzed with three approaches: 1) Trend 2) Seasonality 3) Serial.
+In this step, the meta data converted to time series data is automatically analyzed with our **time series data analysis tool**. Executing the Python code below shows the results of time series data analyzed with three approaches: **1) Trend 2) Seasonality 3) Serial**.
 
  ```python
 $ python models/analysis_tool.py
@@ -44,13 +44,18 @@ $ python models/analysis_tool.py
 If you want to get the analysis result of other port, just put the port name in target variable. ```target = 'Busan' ```. Default is 'Busan' port.
 
 #### STEP 3. Feature selection
-This step returns features (or columns) that are highly related to the target port logistics. The Python code below provides optimal features based on both 1) Pearson's correlation coefficient and 2) Ensemble learning methods (XGBoost).
+This step returns features (or columns) that are highly related to the target's port logistics. The Python code below **provides optimal features** based on both **1) Pearson's correlation coefficient** and **2) Ensemble learning methods (XGBoost)**.
 
  ```python
 $ python models/feature_selection.py
 ```
 
 #### STEP 4. Transformer-based model training and future port logistics prediction
+Lastly, import ```transformers.py ``` code to train our designed transformers-based model and predict future target's port logistics. The results predicted by the model are shown as a plot graph for each iteration set by the user.
+
+ ```python
+$ python models/train.py
+```
 
 #### Prediction results.
 
