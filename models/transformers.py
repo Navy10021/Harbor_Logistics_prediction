@@ -82,8 +82,7 @@ class MyTransformer(nn.Module):
     """
     def __init__(self, feature_size = 256, num_layers = 3, dropout = 0.05):
         super(MyTransformer, self).__init__()
-        self.model_type = 'Transformer'
-
+        self.model_type = 'Transformers'
         self.src_mask = None
         self.pos_encoder = PositionalEncoding(feature_size)
         # Encoder : Transformer Encoder model including MultiheadAttention(nhead = the number of heads in the multi-head Attention models)
