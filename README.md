@@ -59,6 +59,7 @@ $ python models/train.py
 
 #### Prediction results.
 
++ IMG
 
 ### 4. Dev
   - Seoul National University GSDS NLP Labs
