@@ -7,22 +7,22 @@ import math
 from matplotlib import pyplot
 from sklearn.preprocessing import MinMaxScaler
 
-#########################
-## 0. Hyper-parameters ##
-#########################
+
+## 0. Define Hyper-parameters ##
 torch.manual_seed(2023)
 np.random.seed(2023)
 
 calculate_loss_all_values = False
-input_window = 12    # num of input steps (input months)
-output_window = 2    # num of prediction multi steps
+input_window = 12                   # num of input steps (input months)
+output_window = 2                   # num of prediction multi steps
 batch_size = 32
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(">> My model uses {}.".format(device))
 
-#####################################
-## 1. Positional Encoding function ##
-#####################################
+
+###############################################################################
+## 1. Positional Encoding Class as a component of the Transformers structure ##
+###############################################################################
 class PositionalEncoding(nn.Module):
     """
      src = positional encoding + embedding vector
@@ -43,15 +43,20 @@ class PositionalEncoding(nn.Module):
     def forward(self, x):
         return x + self.PE[:x.size(0), :]   # Embedding vector + Positional Encoding
 
-#####################################
-## 2. Multi-Layer Perceptron (MLP) ##
-#####################################
-
-# Gaussian Error Linear Units
+    
+#########################################################################
+## 2. 2-layer Multi-Layer Perceptron (MLP) as the Transformers decoder ##
+#########################################################################
+# Gaussian Error Linear Units : GLUE is a 2-layer MLP structure activation function currently used in Google BERT and OpenAI GPT models.
 def Gelu(x):
     return 0.5 * x * (1.0 + torch.tanh(math.sqrt(2.0 / math.pi) * (x + 0.044715 * torch.pow(x, 3.0))))
 
 class MLP(nn.Module):
+    """
+    feature_size : Embedding dimension
+    dropout : Dropout ratio
+    Gelu : Activation function
+    """
     def __init__(self, feature_size = 512, dropout = 0.1):
         super().__init__()
         self.c_fc = nn.Linear(feature_size, 4*feature_size, bias = True)
@@ -65,14 +70,15 @@ class MLP(nn.Module):
         x = self.dropout(x)
         return x
 
-###########################
-## 3. Transformer models ##
-###########################
+    
+############################################
+## 3. Transformers-based prediction model ##
+############################################
 class MyTransformer(nn.Module):
     """
     Pos-Encoding : PositionalEncoding Class
     Encoder : Transformer Encoder + Look ahead masking
-    Decoder : Linear model
+    Decoder : 2-layer Multi-Layer Perceptron
     """
     def __init__(self, feature_size = 256, num_layers = 3, dropout = 0.05):
         super(MyTransformer, self).__init__()
@@ -83,16 +89,13 @@ class MyTransformer(nn.Module):
         # Encoder : Transformer Encoder model including MultiheadAttention(nhead = the number of heads in the multi-head Attention models)
         self.encoder_layer = nn.TransformerEncoderLayer(d_model = feature_size, nhead = 8, dropout = dropout)
         self.transformer_encoder = nn.TransformerEncoder(self.encoder_layer, num_layers = num_layers)
-        # Decoder : Linear model((N, 512) -> (N, 1))
-        #self.decoder = nn.Linear(feature_size, 1)
+        # Decoder : 2-layer MLP
         self.decoder = MLP(feature_size=feature_size, dropout=0.1)
         # Initialize
         self.init_weights()
 
     def init_weights(self):
         init_range = 0.1
-        #self.decoder.bias.data.zero_()
-        #self.decoder.weight.data.uniform_(-init_range, init_range)
         self.decoder.c_fc.bias.data.zero_()
         self.decoder.c_fc.weight.data.uniform_(-init_range, init_range)
         self.decoder.c_proj.bias.data.zero_()
@@ -105,22 +108,22 @@ class MyTransformer(nn.Module):
         return mask
 
     def forward(self, src):
-        # 1. Encoder masking
+        # Encoder masking
         if self.src_mask == None or self.src_mask.size(0) != len(src):
             device = src.device
             mask = self._generate_look_ahead_mask(len(src)).to(device)
             self.src_mask = mask 
-        # 2. Pos-Encoding
+        # Pos-Encoding
         src = self.pos_encoder(src)
-        # 3. Encoder
+        # Encoder
         output = self.transformer_encoder(src, self.src_mask)
-        # 4. Decoder
+        # Decoder
         output = self.decoder(output)
         return output
 
-##############################
-## 4. DataLoader functions ###
-##############################
+###########################################################################
+## 4. Functions that transform data for training the Transformers models ##
+###########################################################################
 def create_sequences(input_data, window_size):
     seqs = []
     input_len = len(input_data)
@@ -132,19 +135,19 @@ def create_sequences(input_data, window_size):
     return torch.FloatTensor(seqs)
 
 def get_data(df, tgt_col):
-    # 1. Get data
+    # Get data
     my_data = df[tgt_col].values
     
-    # 2. Normalization
+    # Normalization
     scaler = MinMaxScaler(feature_range=(0, 1)) 
     my_data = scaler.fit_transform(my_data.reshape(-1, 1)).reshape(-1)
     
-    # 3. Hold-out split(Train : Test = 90 : 10)
+    # Hold-out split(Train : Test = 90 : 10)
     samples = round(len(my_data) * 0.90)
     train_data = my_data[:samples]
     test_data = my_data[samples:]
 
-    # 4. Create sequence data
+    # Create sequence data
     train_sequence = create_sequences(train_data, input_window)
     train_sequence = train_sequence[:-output_window]            
 
@@ -160,9 +163,10 @@ def get_batch(source, i, batch_size):
     target = torch.stack(torch.stack([item[1] for item in data]).chunk(input_window, 1))
     return input, target
 
-##############################################
-## 5. Model training & evaluation functions ##
-##############################################
+
+##################################################################
+## 5. Functions for training and evaluating Transformers models ##
+##################################################################
 def train(train_data, model, criterion, optimizer, scheduler, epoch):
     model.train()
     total_loss = 0.0
@@ -209,7 +213,10 @@ def evaluate(eval_model, data_source, criterion):
 
         return total_loss / len(data_source)
 
-
+    
+#########################################
+## 6. Function for graph visualization ##
+#########################################
 def plot_and_loss(eval_model, criterion, data_source, epoch):
     eval_model.eval() 
     total_loss = 0.
