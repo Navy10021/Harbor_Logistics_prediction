@@ -29,7 +29,7 @@ Transformers-based
 
 #### STEP 3.
 
-#### Model prediction results.
+#### Prediction results.
 
 
 ### 4. Dev
