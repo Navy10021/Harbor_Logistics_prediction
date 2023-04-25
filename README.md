@@ -13,21 +13,22 @@ Comming Soon...
 
 #### Overall Pipeline
 
-  - STEP 1)
-  - STEP 2)
-  - STEP 3)
+  - STEP 1) Port logistics volume data pre-processing
+  - STEP 2) Time series data analysis and visualization
+  - STEP 3) Port volume training and prediction using Transformer-based model
 
 ### 2. Model Description
 
-Transformers-based 
+Transformers-based model architecture
+
 
 ### 3. Model Usage
 
-#### STEP 1.
+#### STEP 1. Port logistics volume data pre-processing
 
-#### STEP 2.
+#### STEP 2. Time series data analysis and visualization
 
-#### STEP 3.
+#### STEP 3. Port volume training and prediction using Transformer-based model
 
 #### Prediction results.
 
