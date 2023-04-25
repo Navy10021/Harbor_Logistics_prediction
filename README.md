@@ -24,9 +24,13 @@ Transformers-based
 ### 3. Model Usage
 
 #### STEP 1.
+
 #### STEP 2.
+
 #### STEP 3.
-#### Sample visualization
+
+#### Model prediction results.
+
 
 ### 4. Dev
   - Seoul National University GSDS NLP Labs
