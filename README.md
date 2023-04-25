@@ -29,6 +29,6 @@ Transformers-based
 #### Sample visualization
 
 ### 4. Dev
-  - Seoul National University Graduate School of Data Science
+  - Seoul National University GSDS NLP Labs
   - Busan National University BigData Labs
   - Navy Lee & Min-seop Lee
