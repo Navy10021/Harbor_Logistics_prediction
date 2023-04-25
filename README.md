@@ -41,7 +41,7 @@ In this step, the meta data converted to time series data is automatically analy
 $ python models/analysis_tool.py
 ```
 
-If you want to get the analysis result of other port, just put the port name in target variable. ```target = 'Busan' ```. Default is 'Busan' port.
+If you want to get the analysis result of other ports, just put the port name in target variable ```target = 'Busan' ```. Default is 'Busan' port.
 
 #### STEP 3. Feature selection
 This step returns features (or columns) that are highly related to the target's port logistics. The Python code below **provides optimal features** based on both **1) Pearson's correlation coefficient** and **2) Ensemble learning methods (XGBoost)**.
