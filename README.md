@@ -28,6 +28,10 @@ Transformers-based model architecture
 ### 3. Model Usage
 
 #### STEP 1. Port logistics Data Pre-processing
+The first step is to pre-process raw data and create time-series-based metadata in that 'data' directory by aggregating pre-processed data for each port. Then, it is ready to apply our data analysis tools and train our Transformers-based prediction model.
+```python
+$ python model/prerocessing.py
+```
 
 #### STEP 2. Time series Data Analysis and Visualization
 
