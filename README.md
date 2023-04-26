@@ -51,7 +51,7 @@ $ python models/feature_selection.py
 ```
 
 #### STEP 4. Transformer-based model training and future port logistics prediction
-The final step is to import ```transformers.py ``` code to train the Transformer-based model and predict future port traffic. The results predicted by the model are shown as a plot graph for each iteration set by the user.
+The final step is to import ```transformers.py ``` code to train the Transformer-based model and predict future port traffic. The results predicted by the model are shown as a plot graph per each iteration the user sets.
 
  ```python
 $ python models/train.py
