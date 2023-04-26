@@ -14,8 +14,8 @@ Comming Soon...
 To summarize the entire process of the **『Transformers-based Port Logistics Prediction Model』** we designed, it consists of the following four steps.
   - STEP 1) Port logistics data pre-processing
   - STEP 2) Time series data analysis and visualization
-  - STEP 4) Feature selection
-  - STEP 3) Transformer-based model training and future port logistics prediction
+  - STEP 3) Feature selection
+  - STEP 4) Transformer-based model training and future port logistics prediction
 
 + IMG
 
