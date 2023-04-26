@@ -44,7 +44,7 @@ $ python models/analysis_tool.py
 If you want to get the analysis result of other ports, just put the port name in target variable ```target = 'Busan' ```. Default is 'Busan' port.
 
 #### STEP 3. Feature selection
-This step returns features (or columns) that are highly related to the target's port logistics. The Python code below **provides optimal features** based on both **1) Pearson's correlation coefficient** and **2) Ensemble learning methods (XGBoost)**.
+This step returns any features (or columns) highly related to the target's port logistics. The Python code below **provides optimal features** based on **1) Pearson's correlation coefficient** and **2) Ensemble learning methods (XGBoost)**.
 
  ```python
 $ python models/feature_selection.py
