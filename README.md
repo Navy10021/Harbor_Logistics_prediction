@@ -10,6 +10,9 @@ Comming Soon...
 #### Dataset
 **National Logistics Information Center** provides publicly cargo and passenger transportation data for 27 major ports in Korea (www.nlic.go.kr). We applied that data to our preprocessing process and then used it to analyze time series data and train(or predict) a neural network model. 
 
+
+### 2. Model Description
+
 #### Overall Pipeline
 To summarize the entire process of the **『Transformers-based Port Logistics Prediction Model』** we designed, it consists of the following four steps.
   - STEP 1) Port logistics data pre-processing
@@ -19,7 +22,8 @@ To summarize the entire process of the **『Transformers-based Port Logistics Pr
 
 + IMG
 
-### 2. Model Description
+#### Transformers-based Model
+
 The **Transformers model** solves the problems faced by the existing RNN-based models by applying the **attention mechanism**, and the calculation speed is greatly improved.  In particular, attention is a core concept of the Transformers, which enables the neural network of the model to understand contextual text information, focusing on words similar to the current token, and training and inferencing. Inspired by this original model, our **『Transformers-based Port Logistics Prediction Model』** is a **Seq2Seq model** consisting of an encoder network as **three Transformers encoders are stacked** and a decoder network as **two layers MLP(Multi-Layer Perceptron)** using a **GULE**(Gaussian Error Linear Units) activation function.
 
 ![my_transformers](https://user-images.githubusercontent.com/105137667/234526953-1165f18c-b57a-4979-abad-bda6c8af7f9e.jpg)
