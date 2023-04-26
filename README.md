@@ -22,7 +22,7 @@ To summarize the entire process of the **『Transformers-based Port Logistics Pr
 
 + IMG
 
-#### Transformers-based Model
+#### My Transformers-based Model
 
 The **Transformers model** solves the problems faced by the existing RNN-based models by applying the **attention mechanism**, and the calculation speed is greatly improved.  In particular, attention is a core concept of the Transformers, which enables the neural network of the model to understand contextual text information, focusing on words similar to the current token, and training and inferencing. Inspired by this original model, our **『Transformers-based Port Logistics Prediction Model』** is a **Seq2Seq model** consisting of an encoder network as **three Transformers encoders are stacked** and a decoder network as **two layers MLP(Multi-Layer Perceptron)** using a **GULE**(Gaussian Error Linear Units) activation function.
 
