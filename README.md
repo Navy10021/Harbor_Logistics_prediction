@@ -5,10 +5,10 @@
 
 ### 1. Project Introductions
 
-Comming Soon...
+이 프로젝트의 목적은 AI 기반 모델을 활용하여 한국 내 주요 항만별 선박출입항 현황 데이터를 분석하고, 미래의 물동량을 예측하는데 있다. 이를 위해 우리는 항만 물류에 최적화된 **1)  시계열 데이터 분석 프로세스**와 고유한 **2) 트랜스포머 기반 신경망 예측 모델**을 구축하였다. 우리가 디자인한 **시계열 데이터 분석 프로세스**는 항만 물류 데이터를 전처리한 다음 자동으로 빅데이터 분석(Trend, Seasonality, Serial)한 결과를 시각화해준다. 또한, 우리는 GPT 및 BERT와 같은 자연어처리 분야에 적용되고 있는 최신 모델들에서 영감을 얻어 수치 데이터를 예측하는 **트랜스포머 기반 신경망 예측 모델**은 전처리된 항만 데이터를 학습하고, 미래의 항만 물동량을 예측한다. 평가 메트릭에 따르면 이 모델은 예측 우수한 예측 성능을 보여준다. 향후, 우리가 디자인한 빅데이터 분석 프로세스와 예측 모델이 다양한 분야에 확대 적용되길 기대해 본다.
 
 #### Dataset
-**National Logistics Information Center** provides publicly cargo and passenger transportation data for 27 major ports in Korea (www.nlic.go.kr). We applied that data to our preprocessing process and then used it to analyze time series data and train(or predict) a neural network model. 
+**National Logistics Information Center** provides publicly cargo and passenger transportation data for 27 major ports in Korea (www.nlic.go.kr). We applied that data to our preprocessing process and then used it to analyze time series data and train(also predict) a neural network model. 
 
 
 ### 2. Model Description
