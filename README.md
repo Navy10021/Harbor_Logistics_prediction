@@ -14,7 +14,7 @@ To this end, we built a **「Time-series data analysis process」** optimized fo
 
 
 ### Dataset
-**National Logistics Information Center** provides publicly cargo and passenger transportation data for 27 major ports in Korea (www.nlic.go.kr). We applied that data to our preprocessing process and then used it to analyze time series data and train(also predict) a neural network model. 
+**National Logistics Information Center** provides publicly cargo and passenger transportation data for 27 major ports in Korea (www.nlic.go.kr). We applied that data to our preprocessing process and then used it to analyze time series data and train(also predict) a Transfomer-based neural network model. 
 
 
 ## 2. Model Description
@@ -24,7 +24,7 @@ To summarize the entire process of the **『Transformers-based Port Logistics Pr
   - STEP 1) Port logistics data pre-processing
   - STEP 2) Time series data analysis and visualization
   - STEP 3) Feature selection
-  - STEP 4) Transformer-based model training and future port logistics prediction
+  - STEP 4) Transformer-based neural network model training and future port logistics prediction
 
 ![overall](https://user-images.githubusercontent.com/105137667/235141521-1d2a0a20-a7a1-4287-8ab1-585b06f9b426.jpg)
 
@@ -38,14 +38,14 @@ The **Transformers model** solves the problems faced by the existing RNN-based m
 
 ## 3. Model Usage
 
-#### STEP 1. Port logistics Data Pre-processing
+#### STEP 1. Data Pre-processing
 The first step is to pre-process raw data and create **time series-based metadata** in that 'data' directory by aggregating pre-processed data for each port. Then, it is ready to apply our time series data analysis tools and train our Transformers-based prediction model.
 
 ```python
 $ python models/preprocessing.py
 ```
 
-#### STEP 2. Time series Data Analysis and Visualization
+#### STEP 2. Time series Data Analysis Tool
 In this step, the metadata converted to time series data is automatically analyzed with our **time series data analysis tool**. Executing the Python code below shows the results of time series data analyzed with three approaches: **1) Trend, 2) Seasonality, 3) Serial**.
 
  ```python
@@ -61,8 +61,8 @@ This step returns any features (or columns) highly related to the target's port 
 $ python models/feature_selection.py
 ```
 
-#### STEP 4. Transformer-based model training and future port logistics prediction
-The final step is to import ```transformers.py ``` code to train the Transformer-based model and predict future port traffic. The results predicted by the model are shown as a plot graph per each iteration the user sets.
+#### STEP 4. Transformer-based Neural Network Model training and prediction
+The final step is to import ```transformers.py ``` code to train the Transformer-based neural network model and predict future port traffic. The results predicted by the model are shown as a plot graph per each iteration the user sets.
 
  ```python
 $ python models/train.py
