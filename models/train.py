@@ -7,11 +7,12 @@ df = pd.read_csv("./data/meta_data(cargo).csv", index_col = "date")
 
 
 # 2. Get features (from feature_selection.py)
-target = "Busan"
+#target = "Busan"
 #target = "Ulsan"
 #target = "Gwangyang"
 #target = "Mokpo"
-#target = "Eastsea"
+target = "Eastsea"
+#target = "Pyeongtaek"
 #target = "Jeju"
 
 # dictionary we have already created from feature_selection.py
@@ -20,8 +21,9 @@ selected_features = {
     "Ulsan" : ['Ulsan', 'Okgye', 'Samcheok', 'Masan', 'Daesan', 'Gunsan', 'Gwangyang'],
     "Gwangyang" : ['Ulsan', 'Okgye', 'Samcheok', 'Eastsea', 'Gwangyang'],
     "Mokpo" : ['Jeju', 'Wando', 'Okpo', 'Mokpo', 'Eastsea'],
-    "Eastsea" : ['Jeju', 'Mokpo'],
+    "Eastsea" : ['Jeju', 'Mokpo', 'Eastsea'],
     "Jeju" : ['Jeju', 'Mokpo'],
+    "Pyeongtaek" : ['Pyeongtaek', 'Eastsea']
 }
 series = df[selected_features[target]]
 
