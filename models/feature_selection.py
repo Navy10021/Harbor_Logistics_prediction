@@ -10,17 +10,23 @@ df = pd.read_csv("./data/meta_data(cargo).csv", index_col = "date")
 
 # 2. Define the predictor variable as Busan Port(Korea's No. 1 export/import port). The user can select a different port.
 target = "Busan"
+#target = "Ulsan"
+#target = "Gwangyang"
+#target = "Mokpo"
+#target = "Eastsea"
+#target = "Jeju"
 
 
-# 3. Features selection based with Pearson Correlation Coefficient(PCC) : PCC > +0.55 and PCC < -0.55
+# 3. Features selection based on Pearson Correlation Coefficient(PCC) : PCC > +0.55 and PCC < -0.55
 plt.figure(figsize=(10, 8))
 sns.heatmap(df.corr(), cmap = "Blues")
 plt.title("Feature Importance (Correlations Between Variables)", size = 16)
 plt.show()
-PCC_score = 0.55
+
+PCC_score = 0.70
 num_cols = list(df.corr()[target][(df.corr()[target] > PCC_score) | (df.corr()[target]< -PCC_score)].index)
 new_df = df[num_cols]
-print("\n >> Important features based on PCC :", list(new_df.columns))
+print("\n >> {} Port's Important features based on PCC : {}".format(target, list(new_df.columns)))
 
 
 # 4. Feature selection with Ensemble model (XGBoost)
