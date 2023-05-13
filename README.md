@@ -70,13 +70,13 @@ $ python models/train.py
 
 ## 4. Result visualization
 
-### ★ The evaluation result of our model against the validation dataset per training iterations ★ 
+#### ★ The evaluation result of our model against the validation dataset per training iterations ★ 
 * Blue line : True , Red line : Model prediction, Gray line : Redidual
 
-![iteration_sum](https://github.com/Navy10021/Harbor_Logistics_prediction/assets/105137667/77c7ca79-4468-4698-9af8-f301efdcf8de)
+![iteration_sum](https://github.com/Navy10021/Harbor_Logistics_prediction/assets/105137667/1cddce95-3a94-4c29-a61b-7de808c63d62)
 
 
-### ★ Predicted results of future logistics volume (6 months) in 6 major Korean ports ★ 
+#### ★ Predicted results of future logistics volume (6 months) in 6 major Korean ports ★ 
 
 ![port_prediction_sum](https://github.com/Navy10021/Harbor_Logistics_prediction/assets/105137667/8e849898-0b61-4f96-bc98-0bfbc65f102c)
 
