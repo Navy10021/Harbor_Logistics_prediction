@@ -7,9 +7,24 @@ df = pd.read_csv("./data/meta_data(cargo).csv", index_col = "date")
 
 
 # 2. Get features (from feature_selection.py)
-selected_features = ['Busan', 'Ulsan', 'Samcheok', 'Gunsan', 'Gwangyang', 'Masan', 'Seogwipo']
-series = df[selected_features]
 target = "Busan"
+#target = "Ulsan"
+#target = "Gwangyang"
+#target = "Mokpo"
+#target = "Eastsea"
+#target = "Jeju"
+
+# dictionary we have already created from feature_selection.py
+selected_features = {
+    "Busan" : ['Busan', 'Ulsan', 'Gwangyang'],
+    "Ulsan" : ['Ulsan', 'Okgye', 'Samcheok', 'Masan', 'Daesan', 'Gunsan', 'Gwangyang'],
+    "Gwangyang" : ['Ulsan', 'Okgye', 'Samcheok', 'Eastsea', 'Gwangyang'],
+    "Mokpo" : ['Jeju', 'Wando', 'Okpo', 'Mokpo', 'Eastsea'],
+    "Eastsea" : ['Jeju', 'Mokpo'],
+    "Jeju" : ['Jeju', 'Mokpo'],
+}
+series = df[selected_features[target]]
+
 
 
 # 3. Prepare for my Transformers training.
