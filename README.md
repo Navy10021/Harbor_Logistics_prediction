@@ -70,12 +70,12 @@ $ python models/train.py
 
 ## 4. Result visualization
 
-### ★ 각 이터레이션 마다 검증 데이터셋에 대한 모델의 예측 결과 ★ 
+### ★ The evaluation result of our model against the validation dataset per training iterations ★ 
 
 ![iteration_sum](https://github.com/Navy10021/Harbor_Logistics_prediction/assets/105137667/77c7ca79-4468-4698-9af8-f301efdcf8de)
 
 
-### ★ 주요 6개 항만의 미래 물류량(6개월 이후) 예측 결과 ★ 
+### ★ Predicted results of future logistics volume (6 months) in 6 major Korean ports ★ 
 
 ![port_prediction_sum](https://github.com/Navy10021/Harbor_Logistics_prediction/assets/105137667/8e849898-0b61-4f96-bc98-0bfbc65f102c)
 
