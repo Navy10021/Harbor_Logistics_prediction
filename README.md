@@ -71,7 +71,7 @@ $ python models/train.py
 ## 4. Result visualization
 
 #### ★ The evaluation result of our model against the validation dataset per training iterations ★ 
-* Blue line : True , Red line : Model prediction, Gray line : Redidual
+* Blue line : True , Red line : Model prediction, Gray line : Residual
 
 ![iteration_sum](https://github.com/Navy10021/Harbor_Logistics_prediction/assets/105137667/1cddce95-3a94-4c29-a61b-7de808c63d62)
 
