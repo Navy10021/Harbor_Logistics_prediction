@@ -59,4 +59,4 @@ plt.legend(loc = 'center right')
 plt.show()
 
 
-print("/n >> Feature selection is Done.")
+print("/n >> Feature selection is done.")
