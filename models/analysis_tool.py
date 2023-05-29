@@ -23,6 +23,7 @@ from sklearn.model_selection import train_test_split
 # 1. Load meta dataset
 df = pd.read_csv("./data/meta_data(cargo).csv", index_col = "date")
 
+
 # 2. Visualization of meta dataset
 fig = px.line(df, labels = dict(created_at="date", variable=""))
 fig.update_layout(template = plot_template,
