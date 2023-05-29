@@ -44,9 +44,9 @@ class PositionalEncoding(nn.Module):
         return x + self.PE[:x.size(0), :]   # Embedding vector + Positional Encoding
 
     
-#########################################################################
-## 2. 2-layer Multi-Layer Perceptron (MLP) as the Transformers decoder ##
-#########################################################################
+###########################################################################
+## 2. Two-layer Multi-Layer Perceptron (MLP) as the Transformers decoder ##
+###########################################################################
 # Gaussian Error Linear Units : GLUE is a 2-layer MLP structure activation function currently used in Google BERT and OpenAI GPT models.
 def Gelu(x):
     return 0.5 * x * (1.0 + torch.tanh(math.sqrt(2.0 / math.pi) * (x + 0.044715 * torch.pow(x, 3.0))))
@@ -271,7 +271,7 @@ def predict_future(eval_model, data_source, steps):
     pyplot.close()
 
 def train_eval(train_data, val_data, model, criterion, optimizer, scheduler, epochs, prediction_steps):
-    print("\n ******* My Transformer model is Training ... ******* \n")
+    print("\n ******* My Transformer model is training ... ******* \n")
     best_val_loss = float("inf")
     best_model = None
     print(f"{'Epoch':^8} | {'Batches':^8} | {'LR':^10} | {'Time (ms)':^10} | {'Train Loss':^10} | {'PPL':^10}")
@@ -298,7 +298,7 @@ def train_eval(train_data, val_data, model, criterion, optimizer, scheduler, epo
         print('>> Validation({:5.2f}s)   :   Val Loss : {:5.5f}     Val PPL : {:5.5f}'.format((time.time() - epoch_start_time), val_loss, math.exp(val_loss)))
         print('-' * 72)       
     print('=' * 72)
-    print("******* Training is Done ! *******")
+    print("******* Training is over ! *******")
 
     if val_loss < best_val_loss:
         best_val_loss = val_loss
