@@ -22,9 +22,9 @@ To this end, we built a **ⓐ「Time-series data analysis process」** optimized
 ### Overall Pipeline
 To summarize the entire process of the **『Transformers-based Port Logistics Prediction Model』** we designed, it consists of the following four steps.
   - STEP 1) Port logistics data pre-processing
-  - STEP 2) Time series data analysis and visualization
+  - STEP 2) Time series data analysis and visualization(model ①)
   - STEP 3) Feature selection
-  - STEP 4) Transformer-based neural network model training and future port logistics prediction
+  - STEP 4) Transformer-based neural network model training and future port logistics prediction(model ②)
 
 ![overall](https://user-images.githubusercontent.com/105137667/235141521-1d2a0a20-a7a1-4287-8ab1-585b06f9b426.jpg)
 
