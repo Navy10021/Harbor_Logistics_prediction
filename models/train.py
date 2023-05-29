@@ -7,11 +7,11 @@ df = pd.read_csv("./data/meta_data(cargo).csv", index_col = "date")
 
 
 # 2. Get features (from feature_selection.py)
-#target = "Busan"
+target = "Busan"
 #target = "Ulsan"
 #target = "Gwangyang"
 #target = "Mokpo"
-target = "Eastsea"
+#target = "Eastsea"
 #target = "Pyeongtaek"
 #target = "Jeju"
 
@@ -46,5 +46,5 @@ train_eval(
     optimizer = optimizer,
     scheduler = scheduler,
     epochs = 8000,              # Best epochs : 5000 ~
-    prediction_steps = 6,       # Predict month : 6 Months
+    prediction_steps = 6,       # Months to predict : 6 Months
     )
