@@ -14,7 +14,7 @@ To this end, we built a **ⓐ「Time-series data analysis process」** optimized
 
 
 ### Dataset
-**National Logistics Information Center** provides publicly cargo and passenger transportation data for 27 major ports in Korea (www.nlic.go.kr). We applied that data to our preprocessing process and then used it to analyze time series data and train(also predict) a Transfomer-based neural network model. 
+**National Logistics Information Center(NLIC)** provides publicly cargo and passenger transportation data for 27 major ports in Korea (www.nlic.go.kr). We applied that data to our preprocessing process and then used it to analyze time series data and train(also predict) a Transfomer-based neural network model. 
 
 
 ## 2. Model Description
