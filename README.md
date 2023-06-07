@@ -20,7 +20,7 @@ To this end, we built a **ⓐ「Time-series data analysis process」** optimized
 ## 2. Model Description
 
 ### Overall Pipeline
-To summarize the entire process of the **『Transformers-based Port Logistics Prediction Model』** we designed, it consists of the following four steps.
+To summarize the entire process of the **『Transformers-based Neural Network Harbor Logistics Prediction Model』** we designed, it consists of the following four steps.
   - STEP 1) Port logistics data pre-processing
   - STEP 2) Time series data analysis and visualization(model ①)
   - STEP 3) Feature selection
