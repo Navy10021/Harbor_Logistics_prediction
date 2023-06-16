@@ -82,6 +82,6 @@ $ python models/train.py
 
 
 ## 5. Dev
-  - Seoul National University GSDS NLP Labs
-  - Busan National University BigData Labs
+  - Seoul National University GSDS NLP labs
+  - Busan National University Bigdata Analystics and Engineering labs
   - Navy Lee & Min-seop Lee
