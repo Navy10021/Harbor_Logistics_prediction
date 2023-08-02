@@ -2,7 +2,7 @@
 
 
 ## Transformers-based Neural Network Harbor Logistics Prediction Model 
-### 2023년 정부(해양수산부) 주관 정보서비스/빅데이터 분석 공모전 우수작
+#### 해양수산부 "2023 제10회 정보서비스 공모전" 빅데이터분석 부문 우수작
 
 ## 1. Project Introductions
 
