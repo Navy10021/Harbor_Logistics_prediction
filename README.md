@@ -35,6 +35,36 @@ The **Transformers model** solves the problems faced by the existing RNN-based m
 
 ![my_transformers](https://user-images.githubusercontent.com/105137667/234526953-1165f18c-b57a-4979-abad-bda6c8af7f9e.jpg)
 
+## 3. Transformer with Enhanced Positional Encoding
+This repository demonstrates how to optimize positional encoding in Transformer models for time series data by combining Time2Vec and Frequency-based Encoding. Traditional Transformer models typically use fixed sine and cosine functions to encode positional information, which may not fully capture complex seasonal and periodic patterns found in time series data. Our approach integrates a learnable Time2Vec embedding with a Fourier-based frequency encoding to provide a richer representation of temporal dynamics.
+
+### Key Features
+  - Time2Vec Encoding:
+Maps input time steps to a high-dimensional vector by combining a linear term with multiple learnable periodic (sine) functions. This allows the model to dynamically capture both linear trends and periodic patterns.
+
+  - Frequency-based Encoding:
+Applies Fourier-based encoding to extract multiple frequency components from the time input. This helps in explicitly capturing various periodicities (daily, weekly, seasonal, etc.) by representing the time signal with sine and cosine functions across different frequencies.
+
+  - Combined Positional Encoding:
+The repository provides a custom positional encoding module that concatenates the Time2Vec and Frequency-based encodings, and projects the result to match the Transformer’s embedding dimension. This combined encoding is then added to the input embeddings, enabling the Transformer to better learn from complex time series data.
+
+### Implementation Overview
+The core modules include:
+
+  - Time2Vec Module:
+Implements the learnable transformation of time steps into a vector comprising a linear term and multiple periodic terms.
+
+  - FrequencyEncoding Module:
+Generates sine and cosine components for a fixed range of frequencies, allowing the model to represent different periodic behaviors.
+
+   - CombinedPositionalEncoding Module:
+Concatenates the outputs from the Time2Vec and FrequencyEncoding modules, and projects the combined feature to the desired dimension.
+
+   - Transformer Integration:
+A custom Transformer model is provided that integrates the enhanced positional encoding with standard input embeddings, feeding the combined representation into a Transformer Encoder for tasks like time series forecasting or anomaly detection.
+```python
+$ python models/positional_encoding.py
+```
 
 ## 3. Model Usage
 
