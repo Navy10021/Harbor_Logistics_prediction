@@ -35,7 +35,7 @@ The **Transformers model** solves the problems faced by the existing RNN-based m
 
 ![my_transformers](https://user-images.githubusercontent.com/105137667/234526953-1165f18c-b57a-4979-abad-bda6c8af7f9e.jpg)
 
-## 3. Transformer with Enhanced Positional Encoding
+## 3. Transformer with Enhanced Positional Encoding(+)
 This repository demonstrates how to optimize positional encoding in Transformer models for time series data by combining Time2Vec and Frequency-based Encoding. Traditional Transformer models typically use fixed sine and cosine functions to encode positional information, which may not fully capture complex seasonal and periodic patterns found in time series data. Our approach integrates a learnable Time2Vec embedding with a Fourier-based frequency encoding to provide a richer representation of temporal dynamics.
 
 ### Key Features
@@ -66,7 +66,7 @@ A custom Transformer model is provided that integrates the enhanced positional e
 $ python models/positional_encoding.py
 ```
 
-## 3. Model Usage
+## 4. Model Usage
 
 #### STEP 1. Data Pre-processing
 The first step is to pre-process raw data and create **time series-based metadata** in that 'data' directory by aggregating pre-processed data for each port. Then, it is ready to apply our time series data analysis tools and train our Transformers-based prediction model.
@@ -98,7 +98,7 @@ The final step is to import ```transformers.py ``` code to train the Transformer
 $ python models/train.py
 ```
 
-## 4. Result visualization
+## 5. Result visualization
 
 #### ★ The evaluation result of our model against the validation dataset per training iterations ★ 
 * Blue line : True , Red line : Model prediction, Gray line : Residual
@@ -111,7 +111,7 @@ $ python models/train.py
 ![port_prediction_sum](https://github.com/Navy10021/Harbor_Logistics_prediction/assets/105137667/4e2d3bcc-a88d-4825-b6a3-3f65967641a2)
 
 
-## 5. Dev
+## 6. Dev
   - Seoul National University GSDS NLP labs
   - Busan National University Bigdata Analytics and Engineering labs
   - Navy Lee & Min-seop Lee
