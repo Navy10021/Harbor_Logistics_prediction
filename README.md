@@ -39,13 +39,13 @@ The **Transformers model** solves the problems faced by the existing RNN-based m
 This repository demonstrates how to optimize positional encoding in Transformer models for time series data by combining Time2Vec and Frequency-based Encoding. Traditional Transformer models typically use fixed sine and cosine functions to encode positional information, which may not fully capture complex seasonal and periodic patterns found in time series data. Our approach integrates a learnable Time2Vec embedding with a Fourier-based frequency encoding to provide a richer representation of temporal dynamics.
 
 ### Key Features
-  - Time2Vec Encoding:
+  - **Time2Vec Encoding**:
 Maps input time steps to a high-dimensional vector by combining a linear term with multiple learnable periodic (sine) functions. This allows the model to dynamically capture both linear trends and periodic patterns.
 
-  - Frequency-based Encoding:
+  - **Frequency-based Encoding**:
 Applies Fourier-based encoding to extract multiple frequency components from the time input. This helps in explicitly capturing various periodicities (daily, weekly, seasonal, etc.) by representing the time signal with sine and cosine functions across different frequencies.
 
-  - Combined Positional Encoding:
+  - **Combined Positional Encoding**:
 The repository provides a custom positional encoding module that concatenates the Time2Vec and Frequency-based encodings, and projects the result to match the Transformer’s embedding dimension. This combined encoding is then added to the input embeddings, enabling the Transformer to better learn from complex time series data.
 
 ### Implementation Overview
