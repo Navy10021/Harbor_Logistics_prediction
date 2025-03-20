@@ -43,7 +43,7 @@ This repository demonstrates how to optimize positional encoding in Transformer 
 Maps input time steps to a high-dimensional vector by combining a linear term with multiple learnable periodic (sine) functions. This allows the model to dynamically capture both linear trends and periodic patterns.
 
   - **Frequency-based Encoding**:
-Applies Fourier-based encoding to extract multiple frequency components from the time input. This helps in explicitly capturing various periodicities (daily, weekly, seasonal, etc.) by representing the time signal with sine and cosine functions across different frequencies.
+Applies **Fourier-based encoding** to extract multiple frequency components from the time input. This helps in explicitly capturing various periodicities (daily, weekly, seasonal, etc.) by representing the time signal with sine and cosine functions across different frequencies.
 
   - **Combined Positional Encoding**:
 The repository provides a custom positional encoding module that concatenates the Time2Vec and Frequency-based encodings, and projects the result to match the Transformer’s embedding dimension. This combined encoding is then added to the input embeddings, enabling the Transformer to better learn from complex time series data.
